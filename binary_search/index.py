@@ -18,6 +18,10 @@ def binary_search(arr, item):
 my_arr = ['cautious', 'chemical', 'eminent', 'fabulous',
           'friendly', 'great', 'harmonious', 'little', 'obvious']
 
-print(binary_search(my_arr, 'little'))
-print(binary_search(my_arr, 'chemical'))
-print(binary_search(my_arr, 'non-valid-value'))
+print("Item: 'little' | result: " + str(binary_search(my_arr, 'little')))
+# Output: Item: 'little' | result: 7
+print("Item: 'chemical' | result: " + str(binary_search(my_arr, 'chemical')))
+# Output: Item: 'chemical' | result: 1
+print("Item: 'non-valid-value' | result: " +
+      str(binary_search(my_arr, 'non-valid-value')))
+# Output: Item: 'non-valid-value' | result: None

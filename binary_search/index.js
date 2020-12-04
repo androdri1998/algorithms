@@ -21,6 +21,9 @@ function binarySearch(arr, item) {
 myArr = ['cautious', 'chemical', 'eminent', 'fabulous',
           'friendly', 'great', 'harmonious', 'little', 'obvious'];
 
-console.log(binarySearch(myArr, 'little'));
-console.log(binarySearch(myArr, 'chemical'));
-console.log(binarySearch(myArr, 'non-valid-value'));
+console.log(`Item: 'little' | result: ${binarySearch(myArr, 'little')}`);
+// Output: Item: 'little' | result: 7
+console.log(`Item: 'chemical' | result: ${binarySearch(myArr, 'chemical')}`);
+// Output: Item: 'chemical' | result: 1
+console.log(`Item: 'non-valid-value' | result: ${binarySearch(myArr, 'non-valid-value')}`);
+// Output: Item: 'non-valid-value' | result: null
