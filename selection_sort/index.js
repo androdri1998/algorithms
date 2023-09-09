@@ -15,19 +15,26 @@ const findSmaller = ({ arr = [], }) => {
 }
 
 const selectionSort = ({ arr = [], }) => {
-  const newArr = [];
+  const orderedArray = [];
 
-  arr.forEach(item => {
-    const smaller = findSmaller({ arr });
-    newArr.push(arr[smaller]);
+  let arrClone = arr.concat();
+  let length = arr.length;
 
-    arr = [
-      ...arr.slice(0, smaller),
-      ...arr.slice(smaller + 1)
-    ];
-  });
+  for(let index = 0;index <= length - 1;index++) {
+    const smaller = findSmaller({ arr: arrClone });
+    orderedArray.push(arrClone[smaller]);
 
-  return newArr;
+    const copyArr = [];
+    for(let internalIndex = 0; internalIndex <= arrClone.length - 1; internalIndex++) {
+      if(internalIndex !== smaller) {
+        copyArr.push(arrClone[internalIndex]);
+      }
+    }
+
+    arrClone = copyArr.concat();
+  }
+
+  return orderedArray;
 }
 
 // function's use case
