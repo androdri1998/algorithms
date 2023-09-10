@@ -10,7 +10,7 @@ const removeFirstItem = (array) => {
 };
 
 const isEmptyArray = (array) => array.length === 0;
-const firstNumberIsGreaterThanSecondNumber = (first, second) => first > second; 
+const isFirstNumberGreaterThanSecondNumber = (first, second) => first > second; 
 
 const findMaxNumber = (array, max = 0) => {
     if(isEmptyArray(array)) {
@@ -21,7 +21,7 @@ const findMaxNumber = (array, max = 0) => {
     const firstNumber = array[0];
     const nextArray = removeFirstItem(array);
 
-    if(firstNumberIsGreaterThanSecondNumber(firstNumber, maxNumber)) {
+    if(isFirstNumberGreaterThanSecondNumber(firstNumber, maxNumber)) {
         maxNumber = firstNumber;
     }
 
