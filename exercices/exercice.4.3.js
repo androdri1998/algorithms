@@ -1,20 +1,32 @@
-const max = (array) => {
-    let maxNumber = array[0];
-    const findMax = (source) => {
-        if (!source.length) {
-            return maxNumber;
-        }
-
-        const numberToCompare = source.shift();
-        if (numberToCompare > maxNumber) {
-            maxNumber = numberToCompare;
-        }
-
-        return findMax(source);
+const removeFirstItem = (array) => {
+    const cloneArray = [];
+    let cloneArrayIndex = 0;
+    for(let index = 1; index <= array.length - 1; index++) {
+        cloneArray[cloneArrayIndex] = array[index];
+        cloneArrayIndex++;
     }
 
-    return findMax(array);
-}
+    return cloneArray;
+};
+
+const isEmptyArray = (array) => array.length === 0;
+const firstNumberIsGreaterThanSecondNumber = (first, second) => first > second; 
+
+const findMaxNumber = (array, max = 0) => {
+    if(isEmptyArray(array)) {
+        return max;
+    }
+
+    let maxNumber = max;
+    const firstNumber = array[0];
+    const nextArray = removeFirstItem(array);
+
+    if(firstNumberIsGreaterThanSecondNumber(firstNumber, maxNumber)) {
+        maxNumber = firstNumber;
+    }
+
+    return findMaxNumber(nextArray, maxNumber);
+};
 
 const array = [1, 2, 3, 4, 5, 20, 6, 7, 8, 9, 10, 11];
-console.log(max(array));
+console.log(findMaxNumber(array));
