@@ -1,5 +1,7 @@
+const isThereOnlyOneItem = (arr) => arr.length === 1;
+
 const sum = (array) => {
-    if (array.length === 1) {
+    if (isThereOnlyOneItem(array)) {
         return array[0];
     }
 
