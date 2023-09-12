@@ -19,7 +19,7 @@ const breadthFirstSearch = ({ graph }) => {
     graph.get('you').map(person => searchQueue.enqueue(person));
     const verified = [];
 
-    while (searchQueue) {
+    while (!searchQueue.isEmpty()) {
         const person = searchQueue.dequeue();
         if (!verified.includes(person)) {
             if (personAndSeller({ name: person })) {
