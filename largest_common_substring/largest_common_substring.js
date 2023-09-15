@@ -9,9 +9,6 @@ const largestCommonString = (targetWord, compareWord) => {
             if(!tableWord[line]) {
                 tableWord[line] = [];
             }
-            if(!tableWord[line][column]) {
-                tableWord[line][column] = [];
-            }
 
             if(compareWord[line] === targetWord[column]) {
                 const columnAbove = column - 1 < 0 ? 0 : column - 1;
